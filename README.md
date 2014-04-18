@@ -14,7 +14,7 @@ Open `pci` in a text editor and set the variable `path` to the path of the jar f
 - Create: Add types to a list of entities and print the list
     pci create <file-with-names-of-entities> <type>
 
-- Get: Get a PDDL block in a PDDL file and print the construct
+- Get: Get a PDDL block in a PDDL file and print the block
     pci get <file> <block>
 
 - Add a construct to a PDDL block and print the new domain/problem
