@@ -14,16 +14,22 @@ Open `pci` in a text editor and set the variable `path` to the path of the jar f
 - Create: Add types to a list of entities and print the list
 ```
 pci create <file-with-names-of-entities> <type>
+# Example:
+pci create dogs.txt dog 
 ```
 
 - Get: Get a PDDL block in a PDDL file and print the block
 ```
 pci get <file> <block>
+# Example: 
+pci get domain.pddl predicates
 ```
 
 - Add a construct to a PDDL block and print the new domain/problem
 ```
-pci add <file> <block> <construct>
+pci add <file> <block> <list-of-constructs>
+Example: 
+pci add p01.pddl predicates "((sunny ?w - weather) (happy ?d - dog))"
 ```
 
 ## License
