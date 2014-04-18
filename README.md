@@ -1,36 +1,27 @@
-# pddl-clojure-interface-standalone
+# PDDL/Clojure Interface (Standalone)
 
-FIXME: description
+An interface between PDDL and Clojure using the bash shell. 
 
 ## Installation
 
-Download from http://example.com/FIXME.
+Download from https://github.com/Pold87/pddl-clojure-interface-standalone.
+
+Add the file `pci` to your $PATH.
+Open `pci` in a text editor and set the variable `path` to the path of the jar file. 
 
 ## Usage
 
-FIXME: explanation
+- Create: Add types to a list of entities and print the list
+    pci create <file-with-names-of-entities> <type>
 
-    $ java -jar pddl-clojure-interface-standalone-0.1.0-standalone.jar [args]
+- Get: Get a PDDL block in a PDDL file and print the construct
+    pci get <file> <block>
 
-## Options
-
-FIXME: listing of options this app accepts.
-
-## Examples
-
-...
-
-### Bugs
-
-...
-
-### Any Other Sections
-### That You Think
-### Might be Useful
+- Add a construct to a PDDL block and print the new domain/problem
+    pci add <file> <block> <construct>
 
 ## License
 
-Copyright © 2014 FIXME
+Copyright © 2014 Volker Strobel
 
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
+Distributed under the Eclipse Public License version 1.0.

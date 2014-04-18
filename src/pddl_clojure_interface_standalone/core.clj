@@ -6,18 +6,21 @@
             [fipp.edn :refer (pprint) :rename {pprint fipp}]))
 
 (defn pprint-pddl
-  "Pretty print all PDDL constructs in a list"
+  "Pretty print PDDL constructs"
   [ls]
   (dorun
     (map #(fipp % {:width 85}) ls)))
 
 (defn -main
-  "Run the methods of the PDDL/Clojure interface in the command line"
+  "Run the methods of the PDDL/Clojure interface in the bash shell"
   [& args]
   (let [[tool arg1 arg2 & rargs] args]
     (case tool
+      ;; Create: Add types to a list of entities and print the list
       "create" (println (list* :types (pci/read-entities-and-add-type arg1  arg2)))
+      ;; Get: Get a PDDL construct in a PDDL file and print the construct
       "get" (pprint-pddl (pci/get-PDDL-construct arg1 arg2))
+      ;; Add a construct to a PDDL domain and print the new domain
       "add" (pprint-pddl (pci/add-part-to-PDDL arg1 arg2
                                                (read-string
                                                 (str "(" (clojure.string/join #" " rargs) ")")))))))
