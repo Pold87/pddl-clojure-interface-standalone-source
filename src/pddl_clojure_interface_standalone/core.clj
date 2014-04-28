@@ -24,6 +24,6 @@
       ;; Get: Get a PDDL block in a PDDL file and print the construct
       "get-rest" (fipp (rest (first (pci/get-PDDL-construct arg2 arg1))))
       ;; Add a construct to a PDDL block and print the extended domain/problem
-      "add" (pprint-pddl (pci/add-part-to-PDDL arg1 arg2
+      "add" (fipp (pci/add-part-to-PDDL arg1 arg2
                                                (read-string
                                                 (str (clojure.string/join #" " rargs))))))))
